@@ -92,9 +92,7 @@ class BetaSeries_Widget extends WP_Widget
 		echo $before_title . $instance['title'] . $after_title;
 		
 		$dom = new DomDocument();
-		//if (true === @$dom->loadXML($this->getRssContent($instance))) {
-		
-		$dom->loadXML($this->getRssContent($instance));
+		if (true === @$dom->loadXML($this->getRssContent($instance))) {
 		
 			echo '<ul>';
 			
@@ -116,9 +114,9 @@ class BetaSeries_Widget extends WP_Widget
 			
 			echo '</ul>';
 			
-		/*} else {
+		} else {
 			_e('Le flux ne peut être lu.', 'betaseries_widget');
-		}*/
+		}
 		
 		echo $after_widget;
 	}
